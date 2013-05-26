@@ -1,0 +1,55 @@
+10
+
+dir
+12
+https://subversion.assembla.com/svn/wc_prashant88gupta/webcompiler/grails-app
+https://subversion.assembla.com/svn/wc_prashant88gupta
+
+
+
+2013-05-05T12:14:03.714994Z
+6
+prashant88gupta
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ec0c5a0e-c1ff-4d61-b8f6-5a9cbd0871e2
+
+migrations
+dir
+
+views
+dir
+
+i18n
+dir
+
+utils
+dir
+
+taglib
+dir
+
+services
+dir
+
+conf
+dir
+
+controllers
+dir
+
+domain
+dir
+

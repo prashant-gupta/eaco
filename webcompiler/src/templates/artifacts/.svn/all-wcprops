@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/wc_prashant88gupta/!svn/ver/6/webcompiler/src/templates/artifacts
+END
+TagLib.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/wc_prashant88gupta/!svn/ver/6/webcompiler/src/templates/artifacts/TagLib.groovy
+END
+Tests.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/wc_prashant88gupta/!svn/ver/6/webcompiler/src/templates/artifacts/Tests.groovy
+END
+Controller.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/wc_prashant88gupta/!svn/ver/6/webcompiler/src/templates/artifacts/Controller.groovy
+END
+ScaffoldingController.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/wc_prashant88gupta/!svn/ver/6/webcompiler/src/templates/artifacts/ScaffoldingController.groovy
+END
+Script.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/wc_prashant88gupta/!svn/ver/6/webcompiler/src/templates/artifacts/Script.groovy
+END
+Filters.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/wc_prashant88gupta/!svn/ver/6/webcompiler/src/templates/artifacts/Filters.groovy
+END
+hibernate.cfg.xml
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/wc_prashant88gupta/!svn/ver/6/webcompiler/src/templates/artifacts/hibernate.cfg.xml
+END
+DomainClass.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/wc_prashant88gupta/!svn/ver/6/webcompiler/src/templates/artifacts/DomainClass.groovy
+END
+WebTest.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/wc_prashant88gupta/!svn/ver/6/webcompiler/src/templates/artifacts/WebTest.groovy
+END
+Service.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/wc_prashant88gupta/!svn/ver/6/webcompiler/src/templates/artifacts/Service.groovy
+END

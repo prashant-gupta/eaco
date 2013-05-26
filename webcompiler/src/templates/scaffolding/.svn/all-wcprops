@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/wc_prashant88gupta/!svn/ver/6/webcompiler/src/templates/scaffolding
+END
+Controller.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/wc_prashant88gupta/!svn/ver/6/webcompiler/src/templates/scaffolding/Controller.groovy
+END
+show.gsp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/wc_prashant88gupta/!svn/ver/6/webcompiler/src/templates/scaffolding/show.gsp
+END
+_form.gsp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/wc_prashant88gupta/!svn/ver/6/webcompiler/src/templates/scaffolding/_form.gsp
+END
+create.gsp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/wc_prashant88gupta/!svn/ver/6/webcompiler/src/templates/scaffolding/create.gsp
+END
+edit.gsp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/wc_prashant88gupta/!svn/ver/6/webcompiler/src/templates/scaffolding/edit.gsp
+END
+renderEditor.template
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/wc_prashant88gupta/!svn/ver/6/webcompiler/src/templates/scaffolding/renderEditor.template
+END
+Test.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/wc_prashant88gupta/!svn/ver/6/webcompiler/src/templates/scaffolding/Test.groovy
+END
+list.gsp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/wc_prashant88gupta/!svn/ver/6/webcompiler/src/templates/scaffolding/list.gsp
+END
