@@ -1,6 +1,7 @@
 package org.prashant.eaco;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created with IntelliJ IDEA.
@@ -10,6 +11,6 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public class Employee {
-    List<Activity> activityList;
+    Map<Activity,Integer> activityMap;
     int time;
 }
