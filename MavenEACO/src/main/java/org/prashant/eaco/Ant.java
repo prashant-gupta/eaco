@@ -26,7 +26,7 @@ public class Ant implements Runnable{
     public void run(){
         out.print("Ant: "+this.name);
         Collections.shuffle(employeeList);
-        out.print("||Employee: "+this.start+"||Activities: " +this.start.getActivities().size() + "||TTime: " + this.start.getTotalTime());
+        out.print("||Employee: "+this.start+"||Activities: " +this.start.getActivitySet().size() + "||TTime: " + this.start.getTotalTime());
         employeeList.remove(this.start);
 
         /*
@@ -41,7 +41,7 @@ public class Ant implements Runnable{
     public void walkAnt(boolean flag){
         if (flag){
             Employee e=employeeList.remove(0);
-            out.print("||Employee: "+e+"||Activities: " + e.getActivities().size() + "||TTime: " + e.getTotalTime());
+            out.print("||Employee: "+e+"||Activities: " + e.getActivitySet().size() + "||TTime: " + e.getTotalTime());
             walkAnt(employeeList.size()>0);
         }
     }

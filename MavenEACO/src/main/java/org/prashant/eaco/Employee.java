@@ -1,9 +1,6 @@
 package org.prashant.eaco;
 
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created with IntelliJ IDEA.
@@ -13,28 +10,49 @@ import java.util.Set;
  * To change this template use File | Settings | File Templates.
  */
 public class Employee {
-    Map<Activity,Integer> activityMap;
+    Set<Activity> activitySet;
     String name;
-    int totalTime;
+    Double totalTime;
+
+    public Employee(){}
+
     public Employee(String name){
-        activityMap=new LinkedHashMap<Activity, Integer>();
+        activitySet=new LinkedHashSet<Activity>();
         this.name=name;
     }
 
-    public void addActivityAndTime(Activity activity,Integer time){
-        this.activityMap.put(activity,time);
+    public Employee(String name, Double totalTime){
+        activitySet=new LinkedHashSet<Activity>();
+        this.name=name;
+        this.totalTime=totalTime;
     }
 
-    public Set<Activity> getActivities(){
-        return this.activityMap.keySet();
+    public void addActivity(Activity activity){
+        this.activitySet.add(activity);
     }
 
-    public int getTotalTime(){
-        int totalTime=0;
-        for(Integer i:this.activityMap.values()){
-            totalTime+=i;
-        }
+    public Set<Activity> getActivitySet() {
+        return activitySet;
+    }
+
+    public void setActivitySet(Set<Activity> activitySet) {
+        this.activitySet = activitySet;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Double getTotalTime() {
         return totalTime;
+    }
+
+    public void setTotalTime(Double totalTime) {
+        this.totalTime = totalTime;
     }
 
     public String toString(){

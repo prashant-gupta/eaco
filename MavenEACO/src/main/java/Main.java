@@ -9,6 +9,7 @@ import org.prashant.eaco.Activity;
 import org.prashant.eaco.Ant;
 import org.prashant.eaco.Employee;
 
+import javax.swing.*;
 import java.util.*;
 
 import static java.lang.System.out;
@@ -21,7 +22,6 @@ public class Main {
     public static void main(String... args){
         generateActivities();
         generateEmployee();
-        populateEmployeeWithActivities();
         populateAnts();
         out.println("##############");
         out.println("Ant list: "+antList);
@@ -40,14 +40,36 @@ public class Main {
     }
 
     public static void generateActivities(){
-        for (int i=0;i<10;i++){
+        String count=JOptionPane.showInputDialog(null,"Enter total number of Activities","EACO",JOptionPane.QUESTION_MESSAGE);
+        Integer totalActivityCount=null;
+        try{totalActivityCount=Integer.parseInt(count);}
+        catch(Exception e){out.println(e.getMessage());System.exit(1);}
+        for (int i=0;i<totalActivityCount;i++){
             activitySet.add(new Activity("activity"+i));
         }
     }
 
     public static void generateEmployee(){
-        for (int i=0;i<10;i++){
-            employeeList.add(new Employee("employee"+i));
+        String count=JOptionPane.showInputDialog(null,"Enter total number of Employees","EACO",JOptionPane.QUESTION_MESSAGE);
+        Integer totalEmployeeCount=null;
+        try{totalEmployeeCount=Integer.parseInt(count);}
+        catch(Exception e){out.println(e.getMessage());System.exit(1);}
+
+        for (int i=0;i<totalEmployeeCount;i++){
+            Employee employee=new Employee("employee"+i);
+            employeeList.add(employee);
+
+            JList list = new JList(activitySet.toArray());
+            JOptionPane.showMessageDialog(null, list, "Select activities for employee", JOptionPane.PLAIN_MESSAGE);
+            for(Object a:list.getSelectedValues()){
+                employee.addActivity((Activity)a);
+            }
+
+            String time=JOptionPane.showInputDialog(null,"Enter total number of Employees","EACO",JOptionPane.QUESTION_MESSAGE);
+            Double totalTime=null;
+            try{totalTime=Double.parseDouble(time);}
+            catch(Exception e){out.println(e.getMessage());System.exit(1);}
+            employee.setTotalTime(totalTime);
         }
     }
 
@@ -57,10 +79,11 @@ public class Main {
             int limit=1+(int)(Math.random() * MAX_ACTIVITIES);
             for (int i=0;i< limit;i++){
                 int idx=(int)((Math.random()* activityList.size()));
-                e.addActivityAndTime(activityList.get(idx), 1 + (int) (Math.random() * 10));
+                e.addActivity(activityList.get(idx));
             }
         }
     }
+
     public static void populateAnts(){
         int i=0;
         for (Employee e:employeeList){
