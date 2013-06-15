@@ -1,5 +1,7 @@
 package org.prashant.eaco;
 
+import org.apache.commons.lang.builder.HashCodeBuilder;
+
 import java.util.*;
 
 /**
@@ -57,5 +59,16 @@ public class Employee {
 
     public String toString(){
         return this.name;
+    }
+
+    public int hashCode(){
+        HashCodeBuilder hashCodeBuilder=new HashCodeBuilder();
+        hashCodeBuilder.append(this.name);
+        hashCodeBuilder.append(this.totalTime);
+        return hashCodeBuilder.toHashCode();
+    }
+
+    public boolean equals(Object o){
+        return (o instanceof Employee && o.hashCode() == this.hashCode());
     }
 }

@@ -9,10 +9,14 @@
     <version>13.06.RC1</version>
 
     <repositories>
-
     </repositories>
 
     <dependencies>
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.3</version>
+        </dependency>
 
     </dependencies>
 

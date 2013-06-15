@@ -18,11 +18,18 @@ public class Main {
     static Set<Activity> activitySet=new LinkedHashSet<Activity>();
     static List<Employee> employeeList=new ArrayList<Employee>();
     static List<Thread> antList=new ArrayList<Thread>();
+    static Map<Set<Employee>,Double> pathMap;
 
     public static void main(String... args){
         generateActivities();
         generateEmployee();
         populateAnts();
+        pathMap=generatePathMap(new LinkedHashSet<Employee>(employeeList));
+        for(Map.Entry<Set<Employee>,Double> e:pathMap.entrySet()){
+            out.print(e.getKey()+" = ");
+            out.print(e.getValue());
+            out.println();
+        }
         out.println("##############");
         out.println("Ant list: "+antList);
         out.println("Activity Universe: "+activitySet);
@@ -90,5 +97,20 @@ public class Main {
             antList.add(new Thread(new Ant(employeeList,employeeList.get(i),"Ant"+i),"Ant"+i));
             i++;
         }
+    }
+
+    public static Map<Set<Employee>,Double> generatePathMap(Set <Employee> employeeSet){
+        Map<Set<Employee>,Double> map=new LinkedHashMap<Set<Employee>, Double>();
+        for ( Employee e1: employeeSet){
+            for (Employee e2: employeeSet){
+                if(!e2.equals(e1)){
+                    Set<Employee> keySet=new LinkedHashSet<Employee>();
+                    keySet.add(e1);
+                    keySet.add(e2);
+                    map.put(keySet,0.0);
+                }
+            }
+        }
+        return map;
     }
 }
