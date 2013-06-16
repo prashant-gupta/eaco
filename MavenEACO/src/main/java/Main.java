@@ -26,30 +26,39 @@ public class Main {
     public static void main(String... args){
         generateActivities();
         generateEmployee();
-        populateAnts();
         pathMap=generatePathMap(new LinkedHashSet<Employee>(employeeList));
-        for(Map.Entry<Set<Employee>,Double> e:pathMap.entrySet()){
-            out.print(e.getKey()+" = ");
-            out.print(e.getValue());
-            out.println();
-        }
-        out.println("##############");
-        out.println("Ant list: "+ antThreadList);
-        out.println("Activity Universe: "+activitySet);
-        out.println("##############");
 
-        for (Thread a: antThreadList){
-            a.start();
-            try{
-                a.join();
+
+        out.println("##############");
+        out.println("Activity Universe: "+activitySet);
+        out.println("Path Universe: "+ pathMap);
+        out.println("##############");
+        Long runTime=Long.parseLong(JOptionPane.showInputDialog("Enter maximum execution time"));
+        Long startTime=System.currentTimeMillis();
+
+        while (runTime>(System.currentTimeMillis()-startTime)){
+            populateAnts();
+            for (Thread a: antThreadList){
+                a.start();
+                try{
+                    a.join();
+                }
+                catch(Throwable t){
+                    out.println("Exception ================ "+t.getMessage());
+                }
             }
-            catch(Throwable t){
-                out.println("Exception ================ "+t.getMessage());
-            }
+            Collections.sort(antList,new Ant.OrderByTimeDuration());
+            out.println("==== "+antList);
+            out.println("==== "+antList.get(0).getAntPathMap());
+            updatePheromones(pathMap,antList.get(0).getAntPathMap());
         }
-        Collections.sort(antList,new Ant.OrderByTimeDuration());
-        out.println("==== "+antList);
-        out.println("==== "+antList.get(0).getAntPathMap());
+        out.println();
+        String showMapString="";
+        for(Map.Entry e:pathMap.entrySet()){
+            showMapString+=e+" \n";
+        }
+        out.println("Final path map : \n"+showMapString);
+        JOptionPane.showMessageDialog(null,"Final path map: \n"+showMapString,"EACO",JOptionPane.INFORMATION_MESSAGE);
     }
 
     public static void generateActivities(){
@@ -98,6 +107,8 @@ public class Main {
     }
 
     public static void populateAnts(){
+        antThreadList.clear();
+        antList.clear();
         int i=0;
         for (Employee e:employeeList){
             Ant ant=new Ant(employeeList, employeeList.get(i), "Ant" + i, activitySet);
@@ -135,5 +146,19 @@ public class Main {
             }
         }
         return map;
+    }
+
+    public static void updatePheromones(Map<Set<Employee>,Double> globalPathMap,Map<Set<Employee>,Boolean> antPathMap){
+        for (Map.Entry<Set<Employee>,Boolean> antPath:antPathMap.entrySet()){
+            if (antPath.getValue()){
+                if (globalPathMap.containsKey(antPath.getKey())){
+                    globalPathMap.put(antPath.getKey(),globalPathMap.get(antPath.getKey())+(1-(0.1*globalPathMap.get(antPath.getKey()))));
+                }
+            }else {
+                if (globalPathMap.containsKey(antPath.getKey())){
+                    globalPathMap.put(antPath.getKey(),globalPathMap.get(antPath.getKey())-(0.1*globalPathMap.get(antPath.getKey())));
+                }
+            }
+        }
     }
 }
