@@ -62,7 +62,10 @@ public class Employee {
     }
 
     public int hashCode(){
-        return this.name.hashCode();
+        HashCodeBuilder hashCodeBuilder=new HashCodeBuilder();
+        hashCodeBuilder.append(this.getName());
+        hashCodeBuilder.append(this.getTotalTime());
+        return hashCodeBuilder.toHashCode();
     }
 
     public boolean equals(Object o){
